@@ -1,21 +1,9 @@
 const myElement = document.getElementsByTagName("body")[0];
 
-let shouldRun = false
-
-let interval;
-document.getElementById("switch").addEventListener("click", (event) => {
-    if (shouldRun) {
-        shouldRun = false
-        clearInterval(interval)
-        clearStyles(myElement)
-    } else {
-        shouldRun = true
-        interval = setInterval(() => {
-            randomStyles(myElement);
-            forChildren(myElement);
-        }, 1000)
-    }
-})
+setInterval(() => {
+    randomStyles(myElement);
+    forChildren(myElement);
+}, 1000)
 
 //iteraation throught every element in dom 
 function forChildren(element) {
